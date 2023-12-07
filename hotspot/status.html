@@ -1,0 +1,1 @@
+ $(if http-status == 301)IntraFi status redirect$(endif) $(if http-header == "Location")/portal.html?auth=yes$(if remain-bytes-in != "")&bytesUp=$(bytes-in)&bytesDown=$(bytes-out)&remainBytesIn=$(remain-bytes-in)$(else)&sessionTimeLeft=$(session-time-left-secs)$(endif) $(endif)

@@ -1,0 +1,1 @@
+ $(if http-status == 301)IntraFi login redirect$(endif) $(if http-header == "Location")/portal.html?auth=no$(if error-orig != "")&errorOrig=$(error-orig)$(endif)$(endif)
