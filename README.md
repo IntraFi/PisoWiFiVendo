@@ -8,6 +8,7 @@
     - [ESP Device Installation](#esp-device-installation)
   - [Configuration](#configuration)
     - [MikroTik Router Configuration](#mikrotik-router-configuration)
+    - [ESP Device Configuration](#esp-device-configuration)
 
 ## Installation
 
@@ -92,4 +93,84 @@
 
             ![esp-wifi-settings-connect-intraficonfig-withantenna](https://github.com/IntraFi/PisoWiFiVendo/blob/main/docs/img/esp-wifi-settings-connect-intraficonfig-withantenna.png?raw=true)
 
-    7.  After completing all the steps and the `MikroTik Automatic Configuration`, the `INTRAFI-SETUP-ESPxxxx` will be hidden. If it fails and is shown again, repeat the steps, starting from Step 2. For assurance, in case the firmware flashing results in corruption, start again from Step 1.
+    7.  After completing all the steps and the `MikroTik Automatic Configuration`, the `INTRAFI-SETUP-ESPxxxx` will be hidden. If it fails and is shown again, repeat the steps, starting from Step 2. For assurance, in case the firmware is corrupted., start again from Step 1.
+
+### ESP Device Configuration
+
+1. Perform the [MikroTik Router Configuration](#mikrotik-router-configuration) first. If your ESP device configuration has been reset, proceed to the next steps.
+
+2. Connect to the MikroTik router's Wi-Fi, open a browser, and navigate to the URL [http://10.0.0.2](http://10.0.0.2). Use `admin` as the default password, but only if it has not been updated.
+
+3. Set up the `MikroTik Account`. This is crucial for using the `Piso Wi-Fi Vendo Features`. If the username or password is forgotten, the only way to recover is by [factory resetting the MikroTik](https://wiki.mikrotik.com/wiki/Manual:Reset) router's device.
+
+   ![esp-vendoconfig-mikrotik](https://github.com/IntraFi/PisoWiFiVendo/blob/main/docs/img/esp-vendoconfig-mikrotik.png?raw=true)
+
+4. Update the `Vendo Account`. If the password is forgotten, the only way to reset the ESP device is by pressing the `RST` button five times. The timing of the reset count is after the `first buzzer tone`, then the `built-in LED will blink five times`. During the blink, press the reset button. After that, the count will reset to zero. If the ESP device has been reset, the `INTRAFI-SETUP-ESPxxxx` Wi-Fi network will be shown.
+
+   ![esp-vendoconfig-vendo](https://github.com/IntraFi/PisoWiFiVendo/blob/main/docs/img/esp-vendoconfig-vendo.png?raw=true)
+
+   ![nodemcu-esp8266-resetbutton](https://github.com/IntraFi/PisoWiFiVendo/blob/main/docs/img/nodemcu-esp8266-resetbutton.png?raw=true)
+
+   _The reset button for the NodeMCU ESP8266 device._
+
+5. Bind the `MikroTik Portal Settings` and download the latest `MikroTik Hotspot Portal Files`. If the `MikroTik Hotspot Portal Bind` button is colored, this notifies you to update the necessary settings.
+
+   ![esp-vendoconfig-hsportalbind-colors](https://github.com/IntraFi/PisoWiFiVendo/blob/main/docs/img/esp-vendoconfig-hsportalbind-colors.png?raw=true)
+
+   _The quick access buttons MikroTik Hotspot Portal Bind color indicators._
+
+   ![esp-vendoconfig-hsportalbind-warnings](https://github.com/IntraFi/PisoWiFiVendo/blob/main/docs/img/esp-vendoconfig-hsportalbind-warnings.png?raw=true)
+
+   _The MikroTik Hotspot Portal Bind requires to update warnings._
+
+   #### MikroTik Portal Settings Update
+
+   Input all the required details and choose the `Vendo Rate Features` and `Hotspot Portal Features`, as shown in the image below.
+
+   ![esp-vendoconfig-hsportalbind-settings](https://github.com/IntraFi/PisoWiFiVendo/blob/main/docs/img/esp-vendoconfig-hsportalbind-settings.png?raw=true)
+
+   #### MikroTik Portal Files Download
+
+   ![esp-vendoconfig-hsportalbind-files1](https://github.com/IntraFi/PisoWiFiVendo/blob/main/docs/img/esp-vendoconfig-hsportalbind-files1.png?raw=true)
+
+   _The MikroTik Portal Files Download requires internet connection._
+
+   ![esp-vendoconfig-hsipbinding](https://github.com/IntraFi/PisoWiFiVendo/blob/main/docs/img/esp-vendoconfig-hsipbinding.png?raw=true)
+
+   _The Hotspot IP Binding will gain access to the internet and to the MirkoTik Web Admin Panel._
+
+   ![esp-vendoconfig-hsportalbind-files2](https://github.com/IntraFi/PisoWiFiVendo/blob/main/docs/img/esp-vendoconfig-hsportalbind-files2.png?raw=true)
+
+   ![esp-vendoconfig-hsportalbind-files3](https://github.com/IntraFi/PisoWiFiVendo/blob/main/docs/img/esp-vendoconfig-hsportalbind-files3.png?raw=true)
+
+   ![esp-vendoconfig-hsportalbind-files4](https://github.com/IntraFi/PisoWiFiVendo/blob/main/docs/img/esp-vendoconfig-hsportalbind-files4.png?raw=true)
+
+6. Update the `System Clock` since the default `NTP Pool Server` may be unreliable and take time to sync. This is crucial for verifying and determining the expiration validity of the generated vouchers and for the sales report.
+
+   ![esp-vendoconfig-clock1](https://github.com/IntraFi/PisoWiFiVendo/blob/main/docs/img/esp-vendoconfig-clock1.png?raw=true)
+
+   ![esp-vendoconfig-clock2](https://github.com/IntraFi/PisoWiFiVendo/blob/main/docs/img/esp-vendoconfig-clock2.png?raw=true)
+
+7. After completing all the steps, access to the `Hotspot Portal` at [http://10.0.0.1](http://10.0.0.1) will be available. If any screens appear, follow the steps below.
+
+   #### Hotspot Portal as MikroTik Web Admin Panel
+
+   ![hotspotportal-mkadminpanel](https://github.com/IntraFi/PisoWiFiVendo/blob/main/docs/img/hotspotportal-mkadminpanel.png?raw=true)
+
+   - If it was binded through the hotspot IP binding, unbind it in the ESP device `Admin Panel` at [http://10.0.0.2](http://10.0.0.2). Locate it at _Menu -> Hotspot IP Binding_, as shown in the picture above (right side).
+
+   - If the MikroTik router's device has an antenna, it must be connected to PORT 2 or PORT 3. Otherwise, if it was connected to PORT 2, it will be displayed in the picture above (left side).
+
+   #### IntraFi Hotspot Portal without Settings or Default Hotspot Portal
+
+   ![hotspotportal-nosettings](https://github.com/IntraFi/PisoWiFiVendo/blob/main/docs/img/hotspotportal-nosettings.png?raw=true)
+
+   _Hotspot portal settings are missing._
+
+   ![hotspotportal-nofiles](https://github.com/IntraFi/PisoWiFiVendo/blob/main/docs/img/hotspotportal-nofiles.png?raw=true)
+
+   _Hotspot portal files are missing._
+
+   - If it was previously configured for the MikroTik and ESP devices, proceed with the [ESP Device Configuration](#esp-device-configuration), starting from Step 5.
+
+8. Enjoy earning passive income!
