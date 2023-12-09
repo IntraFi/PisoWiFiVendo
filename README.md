@@ -9,6 +9,8 @@
   - [Configuration](#configuration)
     - [MikroTik Router Configuration](#mikrotik-router-configuration)
     - [ESP Device Configuration](#esp-device-configuration)
+  - [Connection Diagram](#connection-diagram)
+    - [NodeMCU ESP8266 Connection Diagram](#nodemcu-esp8266-connection-diagram)
 
 ## Installation
 
@@ -105,7 +107,7 @@
 
    ![esp-vendoconfig-mikrotik](https://github.com/IntraFi/PisoWiFiVendo/blob/main/docs/img/esp-vendoconfig-mikrotik.png?raw=true)
 
-4. Update the `Vendo Account`. If the password is forgotten, the only way to reset the ESP device is by pressing the `RST` button five times. The timing of the reset count is after the `first buzzer tone`, then the `built-in LED will blink five times`. During the blink, press the reset button. After that, the count will reset to zero. If the ESP device has been reset, the `INTRAFI-SETUP-ESPxxxx` Wi-Fi network will be shown.
+4. Update the `Vendo Account`. If the password is forgotten, the only way to reset the ESP device is by pressing the `RST` button five times. The timing of the reset count is after the `first buzzer tone`, then the `built-in LED will blink five times`. During the blink, press the reset button. After that, the count will reset to zero. If the ESP device has been reset, the `INTRAFI-SETUP-ESPxxxx` Wi-Fi network will be shown and the vendo sales will not be reset.
 
    ![esp-vendoconfig-vendo](https://github.com/IntraFi/PisoWiFiVendo/blob/main/docs/img/esp-vendoconfig-vendo.png?raw=true)
 
@@ -165,7 +167,7 @@
 
    ![hotspotportal-nosettings](https://github.com/IntraFi/PisoWiFiVendo/blob/main/docs/img/hotspotportal-nosettings.png?raw=true)
 
-   _Hotspot portal settings are missing._
+   _Hotspot portal settings are missing. Double click/tap the device information below to show the hotspot portal setup, as shown in the picture above (left side)._
 
    ![hotspotportal-nofiles](https://github.com/IntraFi/PisoWiFiVendo/blob/main/docs/img/hotspotportal-nofiles.png?raw=true)
 
@@ -174,3 +176,16 @@
    - If it was previously configured for the MikroTik and ESP devices, proceed with the [ESP Device Configuration](#esp-device-configuration), starting from Step 5.
 
 8. Enjoy earning passive income!
+
+## Connection Diagram
+
+#### NodeMCU ESP8266 Connection Diagram
+
+- NodeMCU ESP8266 (ESP8266 12-E Chip; 4MB Flash Size)
+- NodeMCU ESP8266 Expansion Base Board
+- Buzzer
+- Relay
+- Coinslot
+- Optional, Ethernet W5500 Module green or blue color (not yet supported!)
+
+![intrafi-nodemcu-esp8266-wireless-and-lan-connection-diagram](https://github.com/IntraFi/PisoWiFiVendo/blob/main/docs/img/intrafi-nodemcu-esp8266-wireless-and-lan-connection-diagram.png?raw=true)
