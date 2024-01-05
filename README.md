@@ -1,7 +1,6 @@
-![intrafi-logo](https://github.com/IntraFi/PisoWiFiVendo/blob/main/docs/img/IntraFi-Logo-2048x2048.png?raw=true)
+![intrafi-logo](https://github.com/IntraFi/PisoWiFiVendo/blob/main/docs/img/IntraFi-Logo.png?raw=true)
 
-<center>MikroTik based piso Wi-Fi vendo system featuring an intuitive admin panel interface and hotspot portal.
-</center>
+<p align="center">MikroTik based piso Wi-Fi vendo system featuring an intuitive admin panel interface and hotspot portal.</p>
 
 All the power of MikroTik API packed into a low-cost Wi-Fi microchip:
 
