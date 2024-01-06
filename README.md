@@ -32,3 +32,7 @@ Experience an easy configuration through a seamless 3-step process to start earn
    Download the latest files online without the need for manual uploads, ensuring a seamless and efficient process for managing MikroTik hotspot portal files.
 
    ![hotspot-portal-files](https://intrafi.github.io/_astro/hotspot-portal-files.ZTEJA4tJ_1KpNoV.webp)
+
+4. All done! Enjoy earning passive income!
+
+### Full guide at the [IntraFi Documentation ➞](https://intrafi.github.io/docs/en/piso-wifi-vendo/installation/esp-device/)
